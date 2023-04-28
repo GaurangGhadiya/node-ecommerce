@@ -2,11 +2,15 @@ const express = require('express');
 const { connectMongoDb } = require('./database');
 const router = require('./routes');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 
 
 const port = process.env.PORT || 70
 const app = express();
+
+// Add cors
+app.use(cors())
 
 // parse body data
 app.use(bodyParser.json())
